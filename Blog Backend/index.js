@@ -9,7 +9,7 @@ import * as UserController from './controllers/UserController.js';
 import * as PostController from './controllers/PostController.js';
 const name = '';
 mongoose
-    .connect('mongodb+srv://iamelhin:wwwwww@cluster0.gzhn9.mongodb.net/blog?retryWrites=true&w=majority&appName=Cluster0')
+    .connect('mongodb+srv://login:password@cluster0.gzhn9.mongodb.net/blog?retryWrites=true&w=majority&appName=Cluster0')
     .then(() => console.log('MongooseDB online'))
     .catch((err) => console.log('MongooseDB err', err));
 

@@ -53,7 +53,9 @@ const onSubmit = async () => {
     const {data} = isEditing ? await axios.patch(`/posts/${id}`, fields) : await axios.post('/posts', fields);
     const _id = isEditing ? id : data._id
     navigate(`/posts/${_id}`);
-
+    if (!isPublic) {
+          alert('Сохраните адрес статьи, иначе вы его не найдёте')
+         }
   } catch (err) {
     console.warn(err);
     alert('Ошибка создания статьи');
@@ -68,6 +70,7 @@ React.useEffect(() => {
     setTags(data.tags.join(','));
     setImageUrl(data.imageUrl);
     setIsPublic(data.isPublic);
+     
   }).catch(err => {
     console.warn(err);
     alert('Ошибка редактирования статьи');

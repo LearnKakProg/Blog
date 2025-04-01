@@ -29,7 +29,7 @@ export const Home = () => {
             <Post
               id={obj.isPublic ? obj._id : userData?._id === obj.user._id ? obj._id : ''}
               title={obj.isPublic ? obj.title : userData?._id === obj.user._id ? obj.title : ''}
-              imageUrl={obj.imageUrl ? `http://localhost:4300${obj.imageUrl}` : ''}
+              imageUrl={obj.imageUrl ? `http://localhost:4300${obj.imageUrl}` : 'http://localhost:4300/noavatar.png'}
               user={obj.isPublic ? obj.user : userData?._id === obj.user._id ? obj.user : ''}
               createdAt={obj.createdAt}
               viewsCount={obj.viewsCount}
